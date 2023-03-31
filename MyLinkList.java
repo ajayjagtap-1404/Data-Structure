@@ -42,4 +42,18 @@ public class MyLinkList {
         myNodes.append(tempNode.getKey());
         System.out.println(myNodes);
     }
+
+    public void append(INode myNewNode) {
+        if (this.head == null) {
+            this.head = myNewNode;
+        }
+        if (this.tail == null) {
+            this.tail = myNewNode;
+        } else {
+
+           this.tail.setNext(myNewNode) ;
+           this.tail = myNewNode;
+
+        }
+    }
 }
