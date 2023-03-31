@@ -55,5 +55,19 @@ public class MyLinkList {
            this.tail = myNewNode;
 
         }
+
+    }
+    public  void insert(INode myFirstNode, INode myNewNode) {
+        if (this.head == null) {
+            this.head = myNewNode;
+        }
+        if (this.tail == null) {
+            this.tail = myNewNode;
+        } else {
+                INode tempNode = myFirstNode.getNext();
+                myFirstNode.setNext(myNewNode);
+                myNewNode.setNext(tempNode);
+
+        }
     }
 }
