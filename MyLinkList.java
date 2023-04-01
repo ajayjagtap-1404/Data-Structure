@@ -37,7 +37,7 @@ public class MyLinkList {
         while (tempNode.getNext() != null) {
             myNodes.append(tempNode.getKey());
             if(!tempNode.equals(tail)) myNodes.append("->");
-            tempNode = tempNode.getNext();
+              tempNode = tempNode.getNext();
         }
         myNodes.append(tempNode.getKey());
         System.out.println(myNodes);
@@ -67,6 +67,17 @@ public class MyLinkList {
                 INode tempNode = myFirstNode.getNext();
                 myFirstNode.setNext(myNewNode);
                 myNewNode.setNext(tempNode);
+
+        }
+    }
+
+    public  void pop() {
+        if (this.head == null) {
+            System.out.println("List is Empty");
+        }
+        else {
+               INode tempNode = this.head.getNext();
+               this.head = tempNode;
 
         }
     }
