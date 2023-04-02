@@ -85,23 +85,50 @@ public class MyLinkList {
     public void popLast() {
         if (this.head == null) {
             System.out.println("List is Empty");
-        return;
+            return;
         }
         if (this.head.getNext() == null) {
             this.head = null;
             return;
         }
 
-            INode secondLastNode = this.head;
-            INode lastNode = this.head.getNext();
-                while (lastNode.getNext() != null) {
-                    lastNode = lastNode.getNext();
-                    secondLastNode = secondLastNode.getNext();
+        INode secondLastNode = this.head;
+        INode lastNode = this.head.getNext();
+        while (lastNode.getNext() != null) {
+            lastNode = lastNode.getNext();
+            secondLastNode = secondLastNode.getNext();
 
-                }
+        }
 
-                secondLastNode.setNext(null);
-                  this.tail = secondLastNode;
+        secondLastNode.setNext(null);
+        this.tail = secondLastNode;
+
+
+    }
+
+    public void searchNode(INode myNode) {
+        INode tempNode = this.head;
+        boolean flag = false;
+        if (this.head == null) {
+            System.out.println("List is Empty ");
+            return;
+        }
+        int i = 0;
+        while (tempNode.getNext() != null) {
+            if (tempNode.getKey() == myNode.getKey()) {
+                flag = true;
+                break;
+            }
+            i++;
+            tempNode = tempNode.getNext();
+        }
+        if (flag) {
+            System.out.println(myNode.getKey() + " present at index " + i);
+        } else {
+            System.out.println("Element not present");
+
+
+        }
 
 
     }
