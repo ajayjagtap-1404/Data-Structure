@@ -127,9 +127,18 @@ public class MyLinkList {
         } else {
             System.out.println("Element not present");
 
-
         }
 
-
     }
+        public void insertAfter(Integer node, INode<Integer> myNewNode) {
+            INode tempNode = this.head;
+            while (tempNode.getKey()!= node) {
+                tempNode = tempNode.getNext();
+            }
+              myNewNode.setNext(tempNode.getNext());
+                tempNode.setNext(myNewNode);
+
+
+
+        }
 }
