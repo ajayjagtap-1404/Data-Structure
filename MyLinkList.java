@@ -3,7 +3,7 @@ package linklist;
 public class MyLinkList {
     INode head;
     INode tail;
-
+    int size;
     @Override
     public String toString() {
         return "MyLinkList{" +
@@ -18,6 +18,7 @@ public class MyLinkList {
     }
 
     public void add(INode myNewNode) {
+        size++;
         if (head == null) {
             this.head = myNewNode;
 
@@ -44,6 +45,7 @@ public class MyLinkList {
     }
 
     public void append(INode myNewNode) {
+        size++;
         if (this.head == null) {
             this.head = myNewNode;
         }
@@ -59,6 +61,7 @@ public class MyLinkList {
     }
 
     public void insert(INode myFirstNode, INode myNewNode) {
+        size++;
         if (this.head == null) {
             this.head = myNewNode;
         }
@@ -73,6 +76,7 @@ public class MyLinkList {
     }
 
     public void pop() {
+        size--;
         if (this.head == null) {
             System.out.println("List is Empty");
         } else {
@@ -83,6 +87,7 @@ public class MyLinkList {
     }
 
     public void popLast() {
+        size--;
         if (this.head == null) {
             System.out.println("List is Empty");
             return;
@@ -131,6 +136,7 @@ public class MyLinkList {
 
     }
         public void insertAfter(Integer node, INode<Integer> myNewNode) {
+        size++;
             INode tempNode = this.head;
             while (tempNode.getKey()!= node) {
                 tempNode = tempNode.getNext();
@@ -138,7 +144,18 @@ public class MyLinkList {
               myNewNode.setNext(tempNode.getNext());
                 tempNode.setNext(myNewNode);
 
-
-
         }
+    public void deleteNode(Integer node) {
+        size--;
+        INode tempNode = head;
+        INode tempNodeTwo = tempNode.getNext();
+        while (tempNodeTwo.getKey() != node) {
+            tempNode = tempNode.getNext();
+            tempNodeTwo = tempNode.getNext();
+        }
+        tempNode.setNext(tempNodeTwo.getNext());
+    }
+    public int getSize() {
+        return size;
+    }
 }
