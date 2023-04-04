@@ -4,9 +4,9 @@ import org.junit.Assert;
 import org.junit.Test;
 
 public class MyLinkListTest {
-      //  UC - 9
+      //  UC - 10
     @Test
-    public void DeleteGivenNodeKeyTestCaseShouldPass () {
+    public void SortGivenNodeKeyInAscendingOrderTestCaseShouldPass () {
         INode<Integer> myFirstNode = new MyNode<>(56);
         INode<Integer> mySecondNode = new MyNode<>(30);
         INode<Integer> myFourthNode = new MyNode<>(70);
@@ -17,13 +17,10 @@ public class MyLinkListTest {
         myLinkList.append(myFourthNode);
         myLinkList.insertAfter(30, myThirdNode);
         myLinkList.printMyNodes();
-        System.out.println("Before deleting  size is " +myLinkList.getSize());
-        myLinkList.deleteNode(40);
-        System.out.println("After deleting size is  " + myLinkList.getSize());
+        myLinkList.sort();
         myLinkList.printMyNodes();
-        boolean result  = myLinkList.head.equals(myFirstNode) &&
-                        myLinkList.head.getNext().equals(mySecondNode) &&
-                        myLinkList.tail.equals(myFourthNode);
+        boolean result  =  myFirstNode.getKey().equals(30) && mySecondNode.getKey().equals(40) && myThirdNode.getKey().equals(56)
+                && myFourthNode.getKey().equals(70);
               Assert.assertTrue(result);
 
     }

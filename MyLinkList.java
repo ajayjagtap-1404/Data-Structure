@@ -158,4 +158,21 @@ public class MyLinkList {
     public int getSize() {
         return size;
     }
+
+    public void sort() {
+        INode currentNode = head;
+        while (currentNode != null) {
+            INode nextNode = currentNode.getNext();
+            while (nextNode != null) {
+                if ((Integer)currentNode.getKey() > (Integer)nextNode.getKey()) {
+                    Integer temp = (Integer)currentNode.getKey();
+                    currentNode.setKey(nextNode.getKey());
+                    nextNode.setKey(temp);
+                }
+                nextNode = nextNode.getNext();
+            }
+            currentNode = currentNode.getNext();
+        }
+    }
+
 }
