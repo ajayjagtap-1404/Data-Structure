@@ -18,4 +18,8 @@ public class MyQueue {
     public INode peak() {
         return myLinkList.head;
     }
+
+    public void dequeue() {
+        myLinkList.pop();
+    }
 }
