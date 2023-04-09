@@ -75,15 +75,12 @@ public class MyLinkList<K> {
         }
     }
 
-    public void pop() {
+    public INode pop() {
         size--;
-        if (this.head == null) {
-            System.out.println("List is Empty");
-        } else {
-            INode tempNode = this.head.getNext();
-            this.head = tempNode;
+        INode tempNode = head;
+        this.head = head.getNext();
+        return tempNode;
 
-        }
     }
 
     public void popLast() {

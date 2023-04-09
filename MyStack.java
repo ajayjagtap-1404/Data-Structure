@@ -22,4 +22,8 @@ public class MyStack {
     public INode peak() {
         return myLinkList.head;
     }
+
+    public INode pop() {
+        return myLinkList.pop();
+    }
 }
