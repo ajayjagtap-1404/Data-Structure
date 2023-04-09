@@ -1,7 +1,7 @@
 package linklist;
 
-public class MyLinkList {
-    INode head;
+public class MyLinkList<K> {
+    public INode head;
     INode tail;
     int size;
     @Override
